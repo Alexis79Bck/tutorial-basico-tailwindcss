@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.- Mi primer componente con Tailwind CSS</title>
+    <!-- 
+    **************************************************************
+    Paso 1: Colocar el script en la cabecera
+            <script src="https://cdn.tailwindcss.com"></script>. 
+            Pero se puede descargar para su utilización de forma local.
+    *************************************************************** 
+    -->
+    <script src="tailwindcss/tailwind-3-3-5.min.js"></script>
+
+    <!-- 
+    **************************************************************
+    Paso 2 (Opcional): Personalizar las opciones de configuración de Tailwind.
+            Para hacerlo, se puede editar el objeto `tailwind.config` para 
+            personalizar las configuraciones. 
+            Ejemplo: el color de texto `#d0373d` como clifford
+            y al elemento se le aplica la clase `text-clifford`
+            Por ser objeto, el nombre puede ser escrito como desee aunque se 
+            recomienda que sea todo en inglés.
+    *************************************************************** 
+    -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#d0373d",
+              azul: "#3030ff",
+              dorado: "#eeb610",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- 
+    **************************************************************
+    Ejercicio 1: Primer bloque de código para mostrar el texto 
+            "Hola Mundo con Tailwind CSS !"
+    *************************************************************** 
+    -->
+    <h1 class="text-3xl font-bold underline text-clifford">
+      Hola Mundo con Tailwind CSS!
+    </h1>
+
+    <div class="bg-azul max-width h-2.5"></div>
+
+    <br>
+    <!-- 
+    **************************************************************
+    Ejercicio 2: Primer botón con las clases predeterminadas de tailwind
+                bg-blue-500 = fondo azul con tonalidad suave
+                hover:bg-blue-700 = fondo azul con tonalidad un poco oscuro
+                text-white = texto en color blanco
+                font-bold = texto en negrita
+                py-2 = espaciado interno vertical
+                px-4 = espaciado interno horizontal
+                rounded = bordes redonndeado
+    *************************************************************** 
+    -->
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Boton
+    </button>
+    <br>
+    <!-- 
+
+    **************************************************************
+    Ejercicio 3: Diseño resposivo - Puntos de quiebres
+            PREFIJO	    ANCHO MINIMO	    CSS
+              'sm'	       640px	      @media (min-width: 640px) { ... }
+              'md'	       768px	      @media (min-width: 768px) { ... }
+              'lg'	       1024px	      @media (min-width: 1024px) { ... }
+              'xl'	       1280px	      @media (min-width: 1280px) { ... }
+              '2xl'	       1536px	      @media (min-width: 1536px) { ... }
+    *************************************************************** 
+    **************************************************************
+    Ejercicio 4: Container = Contenedor   
+                 mx-auto = centra horizontalmente el elemento             
+    *************************************************************** 
+    -->
+    <div class="container mx-auto">
+      <div
+        class="bg-blue-500 w-16 h-16 sm:bg-orange-700 sm:w-24 sm:h-24 md:bg-pink-500 md:w-32 md:h-32 lg:bg-green-500 lg:w-48 lg:h-48"
+      ></div>
+    </div>
+    <br>
+    <!-- 
+
+    **************************************************************
+    Ejercicio 5: Margenes y Espaciado 
+                 m-* = margen en todos los lados
+                 p-* = espaciado en todas las direcciones
+                 mx-auto = centrar horizontalmente (left y right)
+                 py-* = espaciado vertical (top y bottom)
+    *************************************************************** 
+    -->
+    <div class="mx-5 px-10 py-10 border border-black">
+      <p class="font-bold">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
+        voluptatibus omnis numquam quae dolor natus alias molestiae aliquam
+        expedita nemo ipsa sit quibusdam quisquam similique, nobis laborum nihil
+        distinctio obcaecati.
+      </p>
+    </div>
+  </body>
+</html>
